@@ -1,0 +1,161 @@
+.containers {
+	.header {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 24px;
+		gap: 0 24px;
+
+		.left {
+			display: flex;
+			align-items: center;
+			gap: 40px;
+			width: 68%;
+
+			.btnLocations {
+				display: flex;
+				align-items: center;
+				height: 46px;
+				gap: 5px;
+
+				span {
+					svg {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+			.search {
+				position: relative;
+				width: 65%;
+				input {
+					width: 100%;
+				}
+
+				span {
+					position: absolute;
+					top: 12px;
+					left: 15px;
+					svg {
+						width: 25px;
+						height: 25px;
+						color: #9d8495;
+					}
+				}
+			}
+		}
+
+		.right {
+			display: flex;
+			gap: 40px;
+
+			.block {
+				display: flex;
+				gap: 40px;
+
+				.content {
+					display: flex;
+					align-items: center;
+					gap: 10px;
+
+					.icons {
+						svg {
+							width: 25px;
+							height: 25px;
+						}
+					}
+
+					.info {
+						display: flex;
+						flex-direction: column;
+						span {
+							font-size: 12px;
+							font-weight: 400;
+							color: #858295;
+							margin-bottom: 5px;
+						}
+						a {
+							font-size: 16px;
+							color: #10083f;
+							font-weight: 700;
+							transition: color 0.3s ease-in;
+							cursor: pointer;
+
+							&:hover {
+								color: #f16664;
+							}
+						}
+					}
+				}
+			}
+			.blockRegister {
+				display: flex;
+				gap: 40px;
+				.lang {
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					transition: all 0.3s ease-in;
+					cursor: pointer;
+					span {
+						svg {
+							width: 25px;
+							height: 25px;
+							transition: all 0.3s ease-in;
+						}
+					}
+					b {
+						font-size: 16px;
+						color: #10083f;
+						font-weight: 700;
+						transition: all 0.3s ease-in;
+					}
+
+					&:hover {
+						span {
+							svg {
+								color: #98ab91;
+							}
+						}
+						b {
+							color: #98ab91;
+						}
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1280px) {
+			.left {
+				width: 100%;
+			}
+			.right {
+				.block {
+					display: none;
+				}
+			}
+		}
+		@media (max-width: 1024px) {
+			.left {
+				.search {
+					display: none;
+				}
+			}
+		}
+		@media (max-width: 768px) {
+			.left {
+				display: none;
+			}
+			.right {
+				display: none;
+			}
+		}
+	}
+}
+
+.forms {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	margin-top: 20px;
+}

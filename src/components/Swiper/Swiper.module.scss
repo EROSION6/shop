@@ -1,0 +1,35 @@
+.sliders {
+	width: 100%;
+
+	.top {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 20px;
+		a {
+			font-size: 16px;
+			font-weight: 600;
+			color: #f16664;
+			transition: color 0.3s ease-in;
+
+			&:hover {
+				color: #504d64;
+			}
+		}
+	}
+
+	.bottom {
+		display: flex;
+		width: 100%;
+		gap: 0 30px;
+		overflow-x: scroll;
+
+		&::-webkit-scrollbar {
+			width: 0;
+		}
+	}
+
+	@media (max-width: 1440px) {
+		width: 100%;
+	}
+}

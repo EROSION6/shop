@@ -1,0 +1,30 @@
+.pink {
+	padding: 13px 26px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f16664;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 12px;
+	transition: background-color 0.25s ease;
+
+	&:hover {
+		background-color: rgb(225, 32, 32);
+	}
+}
+
+.white {
+	padding: 8px 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f1f1f4;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: background-color 0.25s ease;
+
+	&:hover {
+		background-color: #f16664;
+	}
+}

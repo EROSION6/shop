@@ -1,0 +1,24 @@
+.overflow {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 9999;
+
+	.content {
+		background-color: #fff;
+		width: 400px;
+		height: auto;
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 24px;
+	}
+}

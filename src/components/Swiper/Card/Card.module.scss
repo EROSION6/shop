@@ -1,0 +1,51 @@
+.contents {
+	position: relative;
+	width: 265px;
+	height: 175px;
+	border-radius: 12px;
+	background-color: #f16664;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	.image {
+		width: 265px;
+		height: 175px;
+		img {
+			width: 100%;
+			height: 100%;
+			border: 2px solid #f16664;
+			border-radius: 12px;
+		}
+	}
+
+	.info {
+		position: absolute;
+		top: 0;
+		padding: 20px;
+
+		span {
+			background: #231f20;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			padding: 8px 25px;
+			color: #fff;
+			font-size: 12px;
+			border-radius: 4px;
+			font-weight: 500;
+			cursor: pointer;
+			margin-bottom: 15px;
+		}
+
+		h4 {
+			font-size: 24px;
+			font-weight: 800;
+			color: #231f20;
+		}
+	}
+
+	&:hover {
+		transform: scale(1.02);
+	}
+}

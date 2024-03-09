@@ -1,0 +1,160 @@
+.cart,
+.closeOpen {
+	width: 360px;
+	padding: 5px;
+	position: fixed;
+	background-color: #fff;
+	border: 1px solid #d3d3d5;
+	border-radius: 12px;
+	right: 20px;
+	transform: translate(0%);
+	transition: transform 0.4s ease-in;
+
+	.banner {
+		display: flex;
+		width: 100%;
+		height: 80px;
+		background: #98ab91;
+		border-radius: 12px;
+		color: #fff;
+		position: relative;
+		cursor: pointer;
+		transition: all 0.4s ease;
+		.img {
+			img {
+				border-radius: 12px;
+			}
+		}
+		.text {
+			display: flex;
+			padding: 16px 20px 16px 0;
+			flex-direction: column;
+			span {
+				&:nth-child(1) {
+					font-size: 20px;
+					font-weight: 600;
+					color: #fff;
+					margin-bottom: 5px;
+				}
+				&:nth-child(2) {
+					font-size: 16px;
+					font-weight: 400;
+					color: #fff;
+				}
+			}
+		}
+
+		&:hover {
+			background-color: rgba(255, 11, 11, 0.776);
+		}
+	}
+
+	.cartsText {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 5px;
+		margin: 60px 0 20px 0;
+
+		span {
+			color: #504d64;
+			font-size: 16px;
+			font-weight: 400;
+			cursor: pointer;
+			transition: color 0.3s ease-in;
+
+			&:hover {
+				color: #f16664;
+			}
+		}
+	}
+
+	.blockCart {
+		display: flex;
+		flex-direction: column;
+		gap: 15px 0;
+		height: 261px;
+		overflow-y: scroll;
+		padding-bottom: 20px;
+
+		&::-webkit-scrollbar {
+			width: 0;
+		}
+	}
+
+	.prices {
+		display: flex;
+		flex-direction: column;
+		border-top: 1px solid #d3d3d5;
+		.content {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 20px;
+
+			span {
+				font-size: 16px;
+				font-weight: 500;
+				color: #504d64;
+			}
+			b {
+				font-size: 20px;
+				font-weight: 800;
+				color: #10083f;
+			}
+		}
+		.btnPrice {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			padding: 17px 20px;
+			margin-top: 20px;
+
+			span {
+				font-size: 18px;
+				font-weight: 600;
+				color: #fff;
+			}
+		}
+	}
+
+	@media (max-width: 425px) {
+		right: 0;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.cartButton {
+	position: fixed;
+	bottom: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.btn {
+		padding: 17px 32px;
+
+		span {
+			font-size: 16px;
+			font-weight: 400;
+			color: #fff;
+
+			&:nth-child(1) {
+				padding: 0 5px;
+				border-right: 2px solid #fff;
+				display: flex;
+				gap: 5px;
+			}
+			&:nth-child(2) {
+				padding: 0 5px;
+			}
+		}
+	}
+}
+.closeOpen {
+	transform: translate(150%);
+	transition: transform 0.4s ease-in;
+}
