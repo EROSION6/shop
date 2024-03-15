@@ -3,22 +3,10 @@ import { Title } from '../../UI/Title/Title'
 import logo from '../../assets/logo (2).svg'
 import { Card } from './Card/Card'
 import styles from './Product.module.scss'
-
-type ProductItems = {
-	id: number
-	title: string
-	info: string
-	image: string
-	price: number
-	background: string
-}
-
-interface ProductProps {
-	search: string
-}
+import { Items, ProductProps } from './types'
 
 export const Product: FC<ProductProps> = ({ search }) => {
-	const [responseCard, setResponseCard] = useState<ProductItems[]>([])
+	const [responseCard, setResponseCard] = useState<Items[]>([])
 	const [loading, setLoading] = useState<boolean>(true)
 
 	const fetchCart = async () => {

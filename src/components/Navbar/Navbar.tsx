@@ -1,35 +1,13 @@
 import { FC, useState } from 'react'
-import { BsTelephone } from 'react-icons/bs'
 import { FiSearch } from 'react-icons/fi'
 import { IoEarthOutline } from 'react-icons/io5'
 import { SlLocationPin } from 'react-icons/sl'
-import { TbTruckDelivery } from 'react-icons/tb'
 import { Button, Input, Modal, Title } from '../../UI'
 import logo from '../../assets/logo (2).svg'
 import { Header } from './Header/Header'
 import styles from './Navbar.module.scss'
-
-interface blockLinksItems {
-	icon: JSX.Element
-	title: string
-	links: string
-	href: string
-}
-
-const blockLinks: blockLinksItems[] = [
-	{
-		icon: <TbTruckDelivery />,
-		title: 'Доставляем',
-		links: 'с 10:00 до 22:00',
-		href: '#',
-	},
-	{
-		icon: <BsTelephone />,
-		title: 'Заказ по звонку',
-		links: '+7 707 837 98 89',
-		href: 'tel:+7 707 837 98 89',
-	},
-]
+import { blockLinks } from './data'
+import { InputType, NavbarProps } from './types'
 
 const items = (
 	<>
@@ -45,25 +23,17 @@ const items = (
 	</>
 )
 
-interface NavbarProps {
-	search: string
-	handleSearch: (e: React.SyntheticEvent<HTMLInputElement>) => void
-}
-
-type InputType = {
-	value: string
-	onChange: (e: any) => void
-	placeholder: string
-	type: string
-}
-
 export const Navbar: FC<NavbarProps> = ({ search, handleSearch }) => {
 	const [isModal, setModal] = useState<boolean>(false)
 
-	const [value, setValue] = useState({
+	const [value, setValue] = useState<{
+		nickname: string
+		email: string
+		password: string
+	}>({
 		nickname: '',
 		email: '',
-		password: ' ',
+		password: '',
 	})
 
 	const inputs: InputType[] = [
@@ -86,6 +56,18 @@ export const Navbar: FC<NavbarProps> = ({ search, handleSearch }) => {
 			type: 'password',
 		},
 	]
+	const [showEmail, setShowEmail] = useState<boolean>(false)
+
+	const registerUser: React.MouseEventHandler<HTMLButtonElement> = e => {
+		e.preventDefault()
+
+		if (value.nickname === '' || value.email === '' || value.password === '') {
+			alert('fill out all fields to register')
+		} else {
+			setModal(false)
+			setShowEmail(true)
+		}
+	}
 
 	return (
 		<div className={styles.containers}>
@@ -120,9 +102,13 @@ export const Navbar: FC<NavbarProps> = ({ search, handleSearch }) => {
 							</span>
 							<b>Русский</b>
 						</div>
-						<Button onClick={() => setModal(!isModal)} variant='btnBig'>
-							Войти
-						</Button>
+						{showEmail ? (
+							<span>{value.email}</span>
+						) : (
+							<Button onClick={() => setModal(!isModal)} variant='btnBig'>
+								Войти
+							</Button>
+						)}
 						{isModal && (
 							<Modal onClick={() => setModal(false)}>
 								<div className={styles.reg}>
@@ -137,7 +123,9 @@ export const Navbar: FC<NavbarProps> = ({ search, handleSearch }) => {
 											type={input.type}
 										/>
 									))}
-									<Button variant='btnBig'>Зарегистрироваться</Button>
+									<Button onClick={registerUser} variant='btnBig'>
+										Зарегистрироваться
+									</Button>
 								</form>
 							</Modal>
 						)}

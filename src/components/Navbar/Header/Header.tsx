@@ -1,32 +1,10 @@
 import { FC, useState } from 'react'
-import { AiFillInstagram } from 'react-icons/ai'
-import { CgFacebook } from 'react-icons/cg'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
 import { SlLocationPin } from 'react-icons/sl'
 import { Button } from '../../../UI'
 import logo from '../../../assets/logo (2).svg'
+import { links, listItem } from '../data'
 import styles from './Header.module.scss'
-
-interface linksType {
-	href: string
-	content: string | JSX.Element
-}
-
-const listItem: string[] = [
-	'Наши кофейни',
-	'Акции и новости',
-	'Франшиза',
-	'Поставщикам',
-	'Вакансий',
-	'Отзывы',
-	'Контакты',
-]
-
-const links: linksType[] = [
-	{ href: '#', content: 'Забронировать столик' },
-	{ href: '#', content: <CgFacebook /> },
-	{ href: '#', content: <AiFillInstagram /> },
-]
 
 export const Header: FC = () => {
 	const [openNavbar, setOpenNavbar] = useState<boolean>(false)

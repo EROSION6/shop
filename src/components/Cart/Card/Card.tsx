@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Button } from '../../../UI'
 import { useAppDispatch, useAppSelector } from '../../../hooks'
-import { addCart, deleteCart } from '../../../redux/reducers/cardSlice'
+import { addCart, deleteCart } from '../../../redux/reducers/cartSlice'
 import styles from './Card.module.scss'
 
 interface CardPropsCart {

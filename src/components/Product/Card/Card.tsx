@@ -1,19 +1,11 @@
 import { FC } from 'react'
 import { useDispatch } from 'react-redux'
 import { Button } from '../../../UI'
-import { addCart } from '../../../redux/reducers/cardSlice'
+import { addCart } from '../../../redux/reducers/cartSlice'
+import { Items } from '../types'
 import styles from './Card.module.scss'
 
-interface CardProps {
-	id: number
-	title: string
-	info: string
-	image: string
-	price: number
-	background: string
-}
-
-export const Card: FC<CardProps> = ({
+export const Card: FC<Items> = ({
 	id,
 	title,
 	image,

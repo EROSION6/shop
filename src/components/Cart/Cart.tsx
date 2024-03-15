@@ -2,14 +2,10 @@ import { FC, useState } from 'react'
 import { BsBasket2 } from 'react-icons/bs'
 import { Button, Title } from '../../UI'
 import { useAppDispatch, useAppSelector } from '../../hooks'
-import { clearCart } from '../../redux/reducers/cardSlice'
+import { clearCart } from '../../redux/reducers/cartSlice'
 import Card from './Card/Card'
 import styles from './Cart.module.scss'
-
-interface pricesArray {
-	product: string
-	price: number
-}
+import { pricesArray } from './types'
 
 const prices: pricesArray[] = [
 	{ product: '3 товара', price: 12850 },

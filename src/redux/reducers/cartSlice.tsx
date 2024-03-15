@@ -32,11 +32,10 @@ export const cartSlice = createSlice({
 			const existingItem = state.cart.find(
 				item => item.id === action.payload.id
 			)
-			if (existingItem) {
-				existingItem.count++
-			} else {
-				state.cart.push({ ...action.payload, count: 1 })
-			}
+			existingItem
+				? existingItem.count++
+				: state.cart.push({ ...action.payload, count: 1 })
+				
 			state.totalPrice = state.cart.reduce((sum, item) => {
 				return item.price * item.count + sum
 			}, 0)
