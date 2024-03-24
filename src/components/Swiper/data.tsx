@@ -1,6 +1,12 @@
-import { Items } from './types'
+export type Item = {
+	title: string
+	image: string
+	display: string
+	color: string
+	back: string
+}
 
-export const cards: Items[] = [
+export const cards: Item[] = [
 	{
 		title: 'Крем с кусочками ананаса :)',
 		image: 'https://crepe-cafe.netlify.app/img/main/action-1.jpg',

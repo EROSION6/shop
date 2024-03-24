@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import { IoEarthOutline } from 'react-icons/io5'
 import { SlLocationPin } from 'react-icons/sl'
@@ -23,7 +23,7 @@ const items = (
 	</>
 )
 
-export const Navbar: FC<NavbarProps> = ({ search, handleSearch }) => {
+export const Navbar = ({ search, handleSearch }: NavbarProps) => {
 	const [isModal, setModal] = useState<boolean>(false)
 
 	const [value, setValue] = useState<{

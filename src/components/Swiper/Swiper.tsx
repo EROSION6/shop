@@ -1,10 +1,9 @@
-import { FC } from 'react'
 import { Title } from '../../UI/index'
 import { Card } from './Card/Card'
 import styles from './Swiper.module.scss'
 import { cards } from './data'
 
-export const Swiper: FC = () => {
+export const Swiper = () => {
 	return (
 		<div className={styles.sliders}>
 			<div className={styles.top}>

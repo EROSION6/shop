@@ -1,18 +1,22 @@
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { BsBasket2 } from 'react-icons/bs'
 import { Button, Title } from '../../UI'
 import { useAppDispatch, useAppSelector } from '../../hooks'
-import { clearCart } from '../../redux/reducers/cartSlice'
+import { clearCart } from '../../redux/slice/cartSlice'
 import Card from './Card/Card'
 import styles from './Cart.module.scss'
-import { pricesArray } from './types'
+
+type pricesArray = {
+	product: string
+	price: number
+}
 
 const prices: pricesArray[] = [
 	{ product: '3 товара', price: 12850 },
 	{ product: 'Доставка', price: 850 },
 ]
 
-const Cart: FC = () => {
+const Cart = () => {
 	const [openCart, setOpenCart] = useState<boolean>(false)
 	const { cart, totalPrice } = useAppSelector(state => state.cart)
 	const dispatch = useAppDispatch()

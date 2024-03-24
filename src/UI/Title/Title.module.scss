@@ -2,4 +2,8 @@
 	font-size: 24px;
 	font-weight: 600;
 	color: black;
+
+	@media (max-width: 768px) {
+		font-size: 18px;
+	}
 }

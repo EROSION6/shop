@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx'
 import { SlLocationPin } from 'react-icons/sl'
 import { Button } from '../../../UI'
@@ -6,7 +6,7 @@ import logo from '../../../assets/logo (2).svg'
 import { links, listItem } from '../data'
 import styles from './Header.module.scss'
 
-export const Header: FC = () => {
+export const Header = () => {
 	const [openNavbar, setOpenNavbar] = useState<boolean>(false)
 
 	return (

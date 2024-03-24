@@ -1,17 +1,16 @@
-import { FC } from 'react'
 import { Button } from '../../../UI'
 import { useAppDispatch, useAppSelector } from '../../../hooks'
-import { addCart, deleteCart } from '../../../redux/reducers/cartSlice'
+import { addCart, deleteCart } from '../../../redux/slice/cartSlice'
 import styles from './Card.module.scss'
 
-interface CardPropsCart {
+type CardPropsCart = {
 	id: number
 	title: string
 	image: string
 	price: number
 }
 
-const Card: FC<CardPropsCart> = ({ id, title, image, price }) => {
+const Card = ({ id, title, image, price }: CardPropsCart) => {
 	const counter = useAppSelector(state =>
 		state.cart.cart.find(c => c.id === id)
 	)

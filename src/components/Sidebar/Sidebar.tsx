@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import styles from './Sidebar.module.scss'
 
 const links: {
@@ -19,7 +18,7 @@ const links: {
 	{ title: 'Барное меню', href: '#' },
 ]
 
-export const Sidebar: FC = () => {
+export const Sidebar = () => {
 	return (
 		<div className={styles.bar}>
 			<nav>

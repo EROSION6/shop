@@ -1,8 +1,7 @@
-import { FC } from 'react'
-import { Items } from '../types'
+import { Item } from '../data'
 import styles from './Card.module.scss'
 
-export const Card: FC<Items> = ({ back, title, image, color, display }) => {
+export const Card = ({ back, title, image, color, display }: Item) => {
 	return (
 		<article className={styles.contents} style={{ background: back }}>
 			<div className={styles.image}>

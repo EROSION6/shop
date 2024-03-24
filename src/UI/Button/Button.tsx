@@ -6,7 +6,7 @@ interface ButtonProps {
 	children: React.ReactNode
 	addClass?: string
 	variant: string
-	onClick?: () => void
+	onClick?: () => void | undefined
 }
 
 export const Button: FC<ButtonProps> = ({

@@ -1,11 +1,23 @@
-import { FC, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Title } from '../../UI/Title/Title'
 import logo from '../../assets/logo (2).svg'
 import { Card } from './Card/Card'
 import styles from './Product.module.scss'
-import { Items, ProductProps } from './types'
 
-export const Product: FC<ProductProps> = ({ search }) => {
+export type Items = {
+	id: number
+	title: string
+	info: string
+	image: string
+	price: number
+	background: string
+}
+
+export interface ProductProps {
+	search: string
+}
+
+export const Product = ({ search }: ProductProps) => {
 	const [responseCard, setResponseCard] = useState<Items[]>([])
 	const [loading, setLoading] = useState<boolean>(true)
 
@@ -40,19 +52,17 @@ export const Product: FC<ProductProps> = ({ search }) => {
 		)
 	}
 	return (
-		<>
-			<section className={styles.product}>
-				<Title style={{ marginBottom: 15 }}>Новинки</Title>
-				<div className={styles.productBlock}>
-					{responseCard
-						.filter(sea => {
-							return sea.title.toLowerCase().includes(search.toLowerCase())
-						})
-						.map(item => (
-							<Card key={item.id} {...item} />
-						))}
-				</div>
-			</section>
-		</>
+		<section className={styles.product}>
+			<Title style={{ marginBottom: 15 }}>Новинки</Title>
+			<div className={styles.productBlock}>
+				{responseCard
+					.filter(sea => {
+						return sea.title.toLowerCase().includes(search.toLowerCase())
+					})
+					.map(item => (
+						<Card key={item.id} {...item} />
+					))}
+			</div>
+		</section>
 	)
 }

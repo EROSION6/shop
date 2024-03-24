@@ -4,6 +4,7 @@
 	.top {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		width: 100%;
 		margin-bottom: 20px;
 		a {
@@ -31,5 +32,13 @@
 
 	@media (max-width: 1440px) {
 		width: 100%;
+	}
+
+	@media (max-width: 768px) {
+		.top {
+			a {
+				font-size: 14px;
+			}
+		}
 	}
 }
